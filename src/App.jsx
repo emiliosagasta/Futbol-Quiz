@@ -1,11 +1,80 @@
 import { useState } from "react";
 import "./app.css";
+import Trivia from "./components/Trivia";
 
 function App() {
 
-  const [questionNumber, setQuestionNumber] = useState(4)
+  const [questionNumber, setQuestionNumber] = useState(1)
+  const [stop, setStop] = useState(false)
 
-
+  const data = [
+    {
+        id: 1,
+        question:"​¿Qué país ganó el primer torneo de fútbol de la Copa Mundial Masculina de la FIFA?",
+        answers: [
+            {
+                text: "Alemania",
+                correct: false,
+            },
+            {
+                text: "​Italia",
+                correct: false,
+            },
+            {
+                text: "​Uruguay",
+                correct: true,
+            },
+            {
+                text: "​Brasil",
+                correct: false,
+            },
+        ],
+    },
+    {
+        id: 2,
+        question:"¿Qué país se convirtió en el primero de África en competir en una final de la Copa del Mundo?",
+        answers: [
+            {
+                text: "Egipto",
+                correct: true,
+            },
+            {
+                text: "Marruecos",
+                correct: false,
+            },
+            {
+                text: "Túnez",
+                correct: false,
+            },
+            {
+                text: "Argelia",
+                correct: false,
+            },
+        ],
+    },
+    {
+        id: 3,
+        question:"¿Qué país fue el primero en ganar dos mundiales?",
+        answers: [
+            {
+                text: "Argentina",
+                correct: false,
+            },
+            {
+                text: "Brasil",
+                correct: false,
+            },
+            {
+                text: "Alemania",
+                correct: false,
+            },
+            {
+                text: "Italia",
+                correct: true,
+            },
+        ],
+    },
+];
   const moneyPyramid = [
     {id:1, amount:"$ 100"},
     {id:2, amount:"$ 200"},
@@ -30,12 +99,19 @@ function App() {
         <div className="top">
           <div className="timer">30</div>
         </div>
-        <div className="bottom">Question and answers</div>
+        <div className="bottom">
+          <Trivia 
+            data={data}
+            setStop={setStop}
+            questionNumber={questionNumber}
+            setQuestionNumber={setQuestionNumber} 
+          />
+        </div>
       </div>
        <div className="pyramid">
           <ul className="moneyList">
             {moneyPyramid.map((m) => ( 
-              <li className={questionNumber === m.id ? "moneyListItem active" : ""}>
+              <li className={questionNumber === m.id ? "moneyListItem active" : "moneyListItem"}>
                 <span className="moneyListItemNumber">{m.id}</span>
                 <span className="moneyListItemAmount">{m.amount}</span>
               </li>
