@@ -187,6 +187,160 @@ function App() {
         },
     ],
   },
+  {
+    id: 9,
+    question:"¿Cuál fue el último equipo en el que jugó Pep Guardiola?",
+    answers: [
+        {
+            text: "Dorados de Sinaloa",
+            correct: true,
+        },
+        {
+            text: "Al-Ahli",
+            correct: false,
+        },
+        {
+            text: "AS Roma",
+            correct: false,
+        },
+        {
+            text: "FC Barcelona",
+            correct: false,
+        },
+    ],
+  },
+  {
+    id: 10,
+    question:"¿Cuál de estos presidentes de la FIFA dio su nombre al trofeo de la Copa del Mundo?",
+    answers: [
+        {
+            text: "Rodolphe Seeldrayers",
+            correct: false,
+        },
+        {
+            text: "Ernst Thommen",
+            correct: false,
+        },
+        {
+            text: "Roberto Guerin",
+            correct: false,
+        },
+        {
+            text: "Julio Rimet",
+            correct: true,
+        },
+    ],
+  },
+  {
+    id: 11,
+    question:"En 1962, un perro callejero corrió al campo en el partido Brasil-Inglaterra, el delantero Jimmy Greaves recogió al perro y ¿cuál fue el resultado?",
+    answers: [
+        {
+            text: "Ser mordido por el perro",
+            correct: false,
+        },
+        {
+            text: "Luego lo depositó en el piso y lo pateo. Recibió la expulsion",
+            correct: false,
+        },
+        {
+            text: "Ser orinado por el perro",
+            correct: true,
+        },
+        {
+            text: "Herido",
+            correct: false,
+        },
+    ],
+  },
+  {
+    id: 12,
+    question:"¿En qué año se fundó el Real Madrid?",
+    answers: [
+        {
+            text: "1912",
+            correct: false,
+        },
+        {
+            text: "1902",
+            correct: true,
+        },
+        {
+            text: "1892",
+            correct: false,
+        },
+        {
+            text: "1900",
+            correct: false,
+        },
+    ],
+  },
+  {
+    id: 13,
+    question:"¿Quién tiene más Copas Libertadores de Argentina?",
+    answers: [
+        {
+            text: "Boca Juniors",
+            correct: false,
+        },
+        {
+            text: "River Plate",
+            correct: true,
+        },
+        {
+            text: "Independiente",
+            correct: true,
+        },
+        {
+            text: "Racing Club",
+            correct: false,
+        },
+    ],
+  },
+  {
+    id: 14,
+    question:"¿Que jugador de River Plate tiene una estatua en El Monumental?",
+    answers: [
+        {
+            text: "Angel Labruna",
+            correct: true,
+        },
+        {
+            text: "Marcelo Gallardo",
+            correct: false,
+        },
+        {
+            text: "Pablo Aimar",
+            correct: false,
+        },
+        {
+            text: "Daniel Passarella",
+            correct: false,
+        },
+    ],
+  },
+  {
+    id: 15,
+    question:"¿En cuál temporada Martín Palermo anotó 35 goles con Boca Juniors?",
+    answers: [
+        {
+            text: "99-00",
+            correct: false,
+        },
+        {
+            text: "98-99",
+            correct: true,
+        },
+        {
+            text: "00-01",
+            correct: false,
+        },
+        {
+            text: "01-02",
+            correct: false,
+        },
+    ],
+  }
 ];
   const moneyPyramid = useMemo(() =>  
    [ 
