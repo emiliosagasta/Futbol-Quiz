@@ -2,9 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 import "./app.css";
 import Timer from "./components/Timer";
 import Trivia from "./components/Trivia";
+import Start from "./components/Start";
 
 function App() {
-
+  const [username, setUsername] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState("$ 0");
@@ -213,10 +214,13 @@ function App() {
     }, [moneyPyramid,questionNumber])
     return (
     <div className="app">
-      <div className="main">
-        {stop ? 
-          <h1 className="endText">Usted ganó: {earned} </h1> : (
+        {username ? (
     <>
+    <div className="main">
+        {stop ? ( 
+          <h1 className="endText">Usted ganó: {earned} </h1> 
+        ) : (
+        <>
         <div className="top">
           <div className="timer">
             <Timer setStop={setStop} questionNumber={questionNumber} />
@@ -237,13 +241,22 @@ function App() {
        <div className="pyramid">
           <ul className="moneyList">
             {moneyPyramid.map((m) => ( 
-              <li className={questionNumber === m.id ? "moneyListItem active" : "moneyListItem"}>
+              <li 
+                className={
+                    questionNumber === m.id
+                    ? "moneyListItem active"
+                    : "moneyListItem"}
+              >
                 <span className="moneyListItemNumber">{m.id}</span>
                 <span className="moneyListItemAmount">{m.amount}</span>
               </li>
           ))}      
           </ul>
        </div>
+    </>        
+    ) : (
+       <Start setUsername={setUsername}/>
+      )}
     </div>
   );
 }
